@@ -1,4 +1,6 @@
 {
+    "project_id": "995aefb1-965d-49bf-9982-d95f223d73d4",
+    "type": "topology",
     "auto_close": true,
     "auto_open": false,
     "auto_start": false,
@@ -8,61 +10,63 @@
     "scene_height": 1000,
     "scene_width": 2000,
     "topology": {
+        "computes": [],
+        "drawings": [],
         "links": [
             {
-                "link_id": "link-001",
+                "link_id": "b182c564-8f25-4eed-9ae5-56dc2ba59056",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "edge-router", "port_number": 0, "label": {"text": "gi0/0"}},
-                    {"adapter_number": 0, "node_id": "l3-switch",   "port_number": 0, "label": {"text": "gi0/0"}}
+                    {"adapter_number": 0, "node_id": "7e2ef7bc-c338-4f98-be89-998a09396012", "port_number": 0, "label": {"text": "gi0/0"}},
+                    {"adapter_number": 0, "node_id": "030b9d17-f951-40c2-895a-9528ec076c34", "port_number": 0, "label": {"text": "gi0/0"}}
                 ]
             },
             {
-                "link_id": "link-002",
+                "link_id": "182c685e-6f57-463d-800f-37af7102bf7b",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "l3-switch", "port_number": 1, "label": {"text": "gi0/1"}},
-                    {"adapter_number": 0, "node_id": "ovs",        "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "030b9d17-f951-40c2-895a-9528ec076c34", "port_number": 1, "label": {"text": "gi0/1"}},
+                    {"adapter_number": 0, "node_id": "4ef4b7fd-cce9-4b2f-a8de-fd0d15747480", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             },
             {
-                "link_id": "link-003",
+                "link_id": "2a8c0a6c-4fcc-4e94-b0b9-fa7c199781fd",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "ovs",       "port_number": 1, "label": {"text": "eth1"}},
-                    {"adapter_number": 0, "node_id": "vpcs-eng1", "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "4ef4b7fd-cce9-4b2f-a8de-fd0d15747480", "port_number": 1, "label": {"text": "eth1"}},
+                    {"adapter_number": 0, "node_id": "7bc6b1e1-5eeb-44dd-a8c4-9fe1689488d9", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             },
             {
-                "link_id": "link-004",
+                "link_id": "c9161589-75bb-4fd4-ad8d-8530b4f54b17",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "ovs",       "port_number": 3, "label": {"text": "eth3"}},
-                    {"adapter_number": 0, "node_id": "vpcs-eng2", "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "4ef4b7fd-cce9-4b2f-a8de-fd0d15747480", "port_number": 3, "label": {"text": "eth3"}},
+                    {"adapter_number": 0, "node_id": "79117e09-fa85-4290-a31e-a9cd936ea2b7", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             },
             {
-                "link_id": "link-005",
+                "link_id": "3e985b1c-a6ae-49af-9c3f-34966e273db8",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "ovs",          "port_number": 2, "label": {"text": "eth2"}},
-                    {"adapter_number": 0, "node_id": "vpcs-admin1",  "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "4ef4b7fd-cce9-4b2f-a8de-fd0d15747480", "port_number": 2, "label": {"text": "eth2"}},
+                    {"adapter_number": 0, "node_id": "0ed12edf-848f-4659-882e-300b275b89a6", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             },
             {
-                "link_id": "link-006",
+                "link_id": "e9d1cc3c-8e6d-45bd-84fb-1b7a83603eaa",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "l3-switch",   "port_number": 2, "label": {"text": "gi0/2"}},
-                    {"adapter_number": 0, "node_id": "dhcp-server", "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "030b9d17-f951-40c2-895a-9528ec076c34", "port_number": 2, "label": {"text": "gi0/2"}},
+                    {"adapter_number": 0, "node_id": "138fe7d2-d964-419a-a379-d465213d6629", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             },
             {
-                "link_id": "link-007",
+                "link_id": "1421c653-e744-43d5-8287-1adaafc3dd51",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "l3-switch",   "port_number": 3, "label": {"text": "gi0/3"}},
-                    {"adapter_number": 0, "node_id": "file-server", "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "030b9d17-f951-40c2-895a-9528ec076c34", "port_number": 3, "label": {"text": "gi0/3"}},
+                    {"adapter_number": 0, "node_id": "ee847f07-3b79-4289-9eca-97913345baeb", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             },
             {
-                "link_id": "link-008",
+                "link_id": "df9c2957-5a11-4373-bd5c-1ec00505827c",
                 "nodes": [
-                    {"adapter_number": 0, "node_id": "edge-router", "port_number": 1, "label": {"text": "gi0/1"}},
-                    {"adapter_number": 0, "node_id": "cloud-nat",   "port_number": 0, "label": {"text": "eth0"}}
+                    {"adapter_number": 0, "node_id": "7e2ef7bc-c338-4f98-be89-998a09396012", "port_number": 1, "label": {"text": "gi0/1"}},
+                    {"adapter_number": 0, "node_id": "c276295a-edbc-44a1-b94a-184b89dfdd88", "port_number": 0, "label": {"text": "eth0"}}
                 ]
             }
         ],
@@ -72,7 +76,7 @@
                 "console_type": "telnet",
                 "label": {"text": "Edge-Router"},
                 "name": "Edge-Router",
-                "node_id": "edge-router",
+                "node_id": "7e2ef7bc-c338-4f98-be89-998a09396012",
                 "node_type": "qemu",
                 "symbol": ":/symbols/router.svg",
                 "x": 700, "y": 100,
@@ -87,7 +91,7 @@
                 "console_type": "telnet",
                 "label": {"text": "L3-Core-Switch"},
                 "name": "L3-Core-Switch",
-                "node_id": "l3-switch",
+                "node_id": "030b9d17-f951-40c2-895a-9528ec076c34",
                 "node_type": "qemu",
                 "symbol": ":/symbols/multilayer_switch.svg",
                 "x": 700, "y": 300,
@@ -101,7 +105,7 @@
                 "compute_id": "local",
                 "label": {"text": "OVS"},
                 "name": "OVS",
-                "node_id": "ovs",
+                "node_id": "4ef4b7fd-cce9-4b2f-a8de-fd0d15747480",
                 "node_type": "qemu",
                 "symbol": ":/symbols/switch.svg",
                 "x": 700, "y": 500
@@ -110,7 +114,7 @@
                 "compute_id": "local",
                 "label": {"text": "VPCS-Eng-1"},
                 "name": "VPCS-Eng-1",
-                "node_id": "vpcs-eng1",
+                "node_id": "7bc6b1e1-5eeb-44dd-a8c4-9fe1689488d9",
                 "node_type": "vpcs",
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "x": 400, "y": 650
@@ -119,7 +123,7 @@
                 "compute_id": "local",
                 "label": {"text": "VPCS-Eng-2"},
                 "name": "VPCS-Eng-2",
-                "node_id": "vpcs-eng2",
+                "node_id": "79117e09-fa85-4290-a31e-a9cd936ea2b7",
                 "node_type": "vpcs",
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "x": 700, "y": 650
@@ -128,7 +132,7 @@
                 "compute_id": "local",
                 "label": {"text": "VPCS-Admin-1"},
                 "name": "VPCS-Admin-1",
-                "node_id": "vpcs-admin1",
+                "node_id": "0ed12edf-848f-4659-882e-300b275b89a6",
                 "node_type": "vpcs",
                 "symbol": ":/symbols/vpcs_guest.svg",
                 "x": 1000, "y": 650
@@ -137,7 +141,7 @@
                 "compute_id": "local",
                 "label": {"text": "DHCP-Server"},
                 "name": "DHCP-Server",
-                "node_id": "dhcp-server",
+                "node_id": "138fe7d2-d964-419a-a379-d465213d6629",
                 "node_type": "qemu",
                 "symbol": ":/symbols/server.svg",
                 "x": 450, "y": 400,
@@ -150,7 +154,7 @@
                 "compute_id": "local",
                 "label": {"text": "File-Server"},
                 "name": "File-Server",
-                "node_id": "file-server",
+                "node_id": "ee847f07-3b79-4289-9eca-97913345baeb",
                 "node_type": "qemu",
                 "symbol": ":/symbols/server.svg",
                 "x": 950, "y": 400,
@@ -163,7 +167,7 @@
                 "compute_id": "local",
                 "label": {"text": "Cloud-NAT"},
                 "name": "Cloud-NAT",
-                "node_id": "cloud-nat",
+                "node_id": "c276295a-edbc-44a1-b94a-184b89dfdd88",
                 "node_type": "cloud",
                 "symbol": ":/symbols/cloud.svg",
                 "x": 1050, "y": 100
