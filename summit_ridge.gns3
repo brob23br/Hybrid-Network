@@ -1,0 +1,176 @@
+{
+    "auto_close": true,
+    "auto_open": false,
+    "auto_start": false,
+    "description": "Summit Ridge Engineering — Hybrid On-Prem/Azure Capstone Network",
+    "name": "SummitRidge-Capstone",
+    "revision": 9,
+    "scene_height": 1000,
+    "scene_width": 2000,
+    "topology": {
+        "links": [
+            {
+                "link_id": "link-001",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "edge-router", "port_number": 0, "label": {"text": "gi0/0"}},
+                    {"adapter_number": 0, "node_id": "l3-switch",   "port_number": 0, "label": {"text": "gi0/0"}}
+                ]
+            },
+            {
+                "link_id": "link-002",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "l3-switch", "port_number": 1, "label": {"text": "gi0/1"}},
+                    {"adapter_number": 0, "node_id": "ovs",        "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            },
+            {
+                "link_id": "link-003",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "ovs",       "port_number": 1, "label": {"text": "eth1"}},
+                    {"adapter_number": 0, "node_id": "vpcs-eng1", "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            },
+            {
+                "link_id": "link-004",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "ovs",       "port_number": 3, "label": {"text": "eth3"}},
+                    {"adapter_number": 0, "node_id": "vpcs-eng2", "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            },
+            {
+                "link_id": "link-005",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "ovs",          "port_number": 2, "label": {"text": "eth2"}},
+                    {"adapter_number": 0, "node_id": "vpcs-admin1",  "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            },
+            {
+                "link_id": "link-006",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "l3-switch",   "port_number": 2, "label": {"text": "gi0/2"}},
+                    {"adapter_number": 0, "node_id": "dhcp-server", "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            },
+            {
+                "link_id": "link-007",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "l3-switch",   "port_number": 3, "label": {"text": "gi0/3"}},
+                    {"adapter_number": 0, "node_id": "file-server", "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            },
+            {
+                "link_id": "link-008",
+                "nodes": [
+                    {"adapter_number": 0, "node_id": "edge-router", "port_number": 1, "label": {"text": "gi0/1"}},
+                    {"adapter_number": 0, "node_id": "cloud-nat",   "port_number": 0, "label": {"text": "eth0"}}
+                ]
+            }
+        ],
+        "nodes": [
+            {
+                "compute_id": "local",
+                "console_type": "telnet",
+                "label": {"text": "Edge-Router"},
+                "name": "Edge-Router",
+                "node_id": "edge-router",
+                "node_type": "qemu",
+                "symbol": ":/symbols/router.svg",
+                "x": 700, "y": 100,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 4,
+                    "startup_config": "configs/edge_router_startup.cfg"
+                }
+            },
+            {
+                "compute_id": "local",
+                "console_type": "telnet",
+                "label": {"text": "L3-Core-Switch"},
+                "name": "L3-Core-Switch",
+                "node_id": "l3-switch",
+                "node_type": "qemu",
+                "symbol": ":/symbols/multilayer_switch.svg",
+                "x": 700, "y": 300,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 8,
+                    "startup_config": "configs/l3_switch_startup.cfg"
+                }
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "OVS"},
+                "name": "OVS",
+                "node_id": "ovs",
+                "node_type": "qemu",
+                "symbol": ":/symbols/switch.svg",
+                "x": 700, "y": 500
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "VPCS-Eng-1"},
+                "name": "VPCS-Eng-1",
+                "node_id": "vpcs-eng1",
+                "node_type": "vpcs",
+                "symbol": ":/symbols/vpcs_guest.svg",
+                "x": 400, "y": 650
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "VPCS-Eng-2"},
+                "name": "VPCS-Eng-2",
+                "node_id": "vpcs-eng2",
+                "node_type": "vpcs",
+                "symbol": ":/symbols/vpcs_guest.svg",
+                "x": 700, "y": 650
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "VPCS-Admin-1"},
+                "name": "VPCS-Admin-1",
+                "node_id": "vpcs-admin1",
+                "node_type": "vpcs",
+                "symbol": ":/symbols/vpcs_guest.svg",
+                "x": 1000, "y": 650
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "DHCP-Server"},
+                "name": "DHCP-Server",
+                "node_id": "dhcp-server",
+                "node_type": "qemu",
+                "symbol": ":/symbols/server.svg",
+                "x": 450, "y": 400,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 1
+                }
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "File-Server"},
+                "name": "File-Server",
+                "node_id": "file-server",
+                "node_type": "qemu",
+                "symbol": ":/symbols/server.svg",
+                "x": 950, "y": 400,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 1
+                }
+            },
+            {
+                "compute_id": "local",
+                "label": {"text": "Cloud-NAT"},
+                "name": "Cloud-NAT",
+                "node_id": "cloud-nat",
+                "node_type": "cloud",
+                "symbol": ":/symbols/cloud.svg",
+                "x": 1050, "y": 100
+            }
+        ]
+    },
+    "variables": null,
+    "version": "2.2.0",
+    "zoom": 75
+}

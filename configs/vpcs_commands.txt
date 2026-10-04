@@ -1,0 +1,85 @@
+============================================================
+Summit Ridge Engineering — VPCS Client Commands
+============================================================
+Use these commands in each VPCS node inside GNS3.
+Open the VPCS console by double-clicking the VPCS node.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VPCS-Eng-1  (VLAN 10 Engineering — OVS eth1 → VLAN10)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# DHCP (TC-02) — request address from pool 10.0.10.100-200
+dhcp
+
+# Show assigned address
+show ip
+
+# TC-03 Permitted: ping File Server
+ping 10.0.30.10
+
+# TC-04 ACL Denied: ping Admin PC (expect U U U — unreachable)
+ping 10.0.20.100
+
+# TC-05 NAT: ping Google DNS
+ping 8.8.8.8
+
+# TC-06 VPN: ping Azure workload VM (after tunnel comes up)
+ping 10.1.1.4
+
+# Save VPCS settings so they survive restart
+save
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VPCS-Eng-2  (VLAN 10 Engineering — OVS eth3 → VLAN10)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+dhcp
+show ip
+ping 10.0.30.10
+ping 10.0.10.101     # ping Eng-1 to verify same-VLAN reachability
+save
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VPCS-Admin-1  (VLAN 20 Administration — OVS eth2 → VLAN20)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+dhcp
+show ip
+
+# TC-04 ACL Denied: Admin cannot reach VLAN10 or VLAN30
+ping 10.0.10.101     # expect U U U
+ping 10.0.30.10      # expect U U U
+
+# TC-05 NAT: Admin can reach internet
+ping 8.8.8.8
+
+save
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VERIFICATION COMMANDS ON EDGE ROUTER (IOS console)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+! TC-01 VLAN visibility
+show vlan brief
+show interfaces trunk
+
+! TC-02 DHCP
+show ip dhcp binding        (run on DHCP Server, not router)
+show ip dhcp pool
+
+! TC-03/04 ACLs and routing
+show ip route
+show access-lists
+show ip interface GigabitEthernet0/0.10
+show ip interface GigabitEthernet0/0.20
+
+! TC-05 NAT
+show ip nat translations
+show ip nat statistics
+
+! TC-06 VPN
+show crypto isakmp sa
+show crypto ipsec sa
+show interfaces Tunnel10
+
+============================================================
