@@ -1,0 +1,39 @@
+# ============================================================
+# Summit Ridge Engineering — Terraform Variable Values
+# Lab: RG=cal-3756-d22 | Region=SouthCentralUS (set by lab RG)
+#
+# INSTRUCTIONS:
+#   1. Copy this file:  cp terraform.tfvars.example terraform.tfvars
+#   2. Fill in every value marked <PLACEHOLDER>
+#   3. NEVER commit terraform.tfvars to source control — add it to .gitignore
+# ============================================================
+
+# Your Azure subscription ID — Azure Portal > Subscriptions
+subscription_id = "<YOUR_AZURE_SUBSCRIPTION_ID>"
+
+# ─── VNet / Subnets ───────────────────────────────────────
+# Change only if the defaults conflict with lab-existing resources.
+vnet_name              = "summit-ridge-vnet"
+vnet_address_space     = "10.1.0.0/16"
+workload_subnet_prefix = "10.1.1.0/24"
+data_subnet_prefix     = "10.1.2.0/24"
+mgmt_subnet_prefix     = "10.1.3.0/24"
+gateway_subnet_prefix  = "10.1.255.0/27"
+
+# ─── VPN Settings ─────────────────────────────────────────
+# Edge router WAN IP — get AFTER GNS3 boots:
+#   Edge-Router# show ip interface GigabitEthernet0/1
+# Leave as "PENDING" for the first apply; update and re-apply after GNS3 is up.
+onprem_public_ip     = "PENDING"
+onprem_address_space = "10.0.0.0/8"
+
+# Pre-shared key — use a strong random string (min 16 chars).
+# This same value goes into the edge router IKEv2 keyring.
+vpn_shared_key = "<STRONG_RANDOM_PSK>"
+
+# ─── VM Credentials ───────────────────────────────────────
+admin_username = "azureadmin"
+# Min 12 chars, at least one uppercase, lowercase, digit, and special character.
+admin_password = "<STRONG_VM_PASSWORD>"
+
+os_disk_sku = "Standard_LRS"
