@@ -84,8 +84,7 @@
                     "adapters": 4,
                     "platform": "x86_64",
                     "hda_disk_image": "/home/student/GNS3/images/QEMU/VyOS-hda.qcow2",
-                    "ram": 1024,
-                    "startup_config": "configs/edge_router_startup.cfg"
+                    "ram": 1024
                 }
             },
             {
@@ -102,8 +101,7 @@
                     "adapters": 8,
                     "platform": "x86_64",
                     "hda_disk_image": "/home/student/GNS3/images/QEMU/EXOS-VM_32.7.2.19.qcow2",
-                    "ram": 1024,
-                    "startup_config": "configs/l3_switch_startup.cfg"
+                    "ram": 1024
                 }
             },
             {
