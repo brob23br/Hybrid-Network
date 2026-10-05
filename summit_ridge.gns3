@@ -83,7 +83,7 @@
                     "adapter_type": "e1000",
                     "adapters": 4,
                     "platform": "x86_64",
-                    "hda_disk_image": "VyOS-fxia.qcow2",
+                    "hda_disk_image": "/home/student/GNS3/images/QEMU/VyOS-hda.qcow2",
                     "ram": 1024,
                     "startup_config": "configs/edge_router_startup.cfg"
                 }
@@ -101,7 +101,7 @@
                     "adapter_type": "e1000",
                     "adapters": 8,
                     "platform": "x86_64",
-                    "hda_disk_image": "EXOS-VM_32.7.2.19.qcow2",
+                    "hda_disk_image": "/home/student/GNS3/images/QEMU/EXOS-VM_32.7.2.19.qcow2",
                     "ram": 1024,
                     "startup_config": "configs/l3_switch_startup.cfg"
                 }
@@ -118,7 +118,7 @@
                     "adapter_type": "e1000",
                     "adapters": 4,
                     "platform": "x86_64",
-                    "hda_disk_image": "ubuntu-24.04-server-cloudimg-amd64.img",
+                    "hda_disk_image": "/home/student/GNS3/images/QEMU/ubuntu-24.04-server-cloudimg-amd64.img",
                     "ram": 512
                 }
             },
@@ -161,7 +161,7 @@
                     "adapter_type": "e1000",
                     "adapters": 1,
                     "platform": "x86_64",
-                    "hda_disk_image": "ubuntu-24.04-server-cloudimg-amd64.img",
+                    "hda_disk_image": "/home/student/GNS3/images/QEMU/ubuntu-24.04-server-cloudimg-amd64.img",
                     "ram": 512
                 }
             },
@@ -177,7 +177,7 @@
                     "adapter_type": "e1000",
                     "adapters": 1,
                     "platform": "x86_64",
-                    "hda_disk_image": "ubuntu-24.04-server-cloudimg-amd64.img",
+                    "hda_disk_image": "/home/student/GNS3/images/QEMU/ubuntu-24.04-server-cloudimg-amd64.img",
                     "ram": 512
                 }
             },
