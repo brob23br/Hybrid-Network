@@ -82,6 +82,7 @@
                 "properties": {
                     "adapter_type": "e1000",
                     "adapters": 4,
+                    "platform": "x86_64",
                     "startup_config": "configs/edge_router_startup.cfg"
                 }
             },
@@ -97,6 +98,7 @@
                 "properties": {
                     "adapter_type": "e1000",
                     "adapters": 8,
+                    "platform": "x86_64",
                     "startup_config": "configs/l3_switch_startup.cfg"
                 }
             },
@@ -107,7 +109,12 @@
                 "node_id": "4ef4b7fd-cce9-4b2f-a8de-fd0d15747480",
                 "node_type": "qemu",
                 "symbol": ":/symbols/switch.svg",
-                "x": 700, "y": 500
+                "x": 700, "y": 500,
+                "properties": {
+                    "adapter_type": "e1000",
+                    "adapters": 4,
+                    "platform": "x86_64"
+                }
             },
             {
                 "compute_id": "local",
@@ -146,7 +153,8 @@
                 "x": 450, "y": 400,
                 "properties": {
                     "adapter_type": "e1000",
-                    "adapters": 1
+                    "adapters": 1,
+                    "platform": "x86_64"
                 }
             },
             {
@@ -159,7 +167,8 @@
                 "x": 950, "y": 400,
                 "properties": {
                     "adapter_type": "e1000",
-                    "adapters": 1
+                    "adapters": 1,
+                    "platform": "x86_64"
                 }
             },
             {
