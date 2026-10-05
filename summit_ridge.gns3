@@ -4,7 +4,6 @@
     "auto_close": true,
     "auto_open": false,
     "auto_start": false,
-    "description": "Summit Ridge Engineering — Hybrid On-Prem/Azure Capstone Network",
     "name": "SummitRidge-Capstone",
     "revision": 9,
     "scene_height": 1000,
